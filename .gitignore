@@ -1,0 +1,13 @@
+introduction/introduction.aux
+introduction/introduction.bbl
+introduction/introduction.blg
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.tdo
+*.thm
+*.toc
+papers/paperA/*.aux
+
