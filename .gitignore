@@ -5,9 +5,16 @@ introduction/introduction.blg
 *.log
 *.out
 *.pdf
+*.bbl
+*.blg
 *.synctex.gz
 *.tdo
 *.thm
 *.toc
 papers/paperA/*.aux
+papers/paperA/*.bbl
+papers/paperA/*.blg
+papers/paperB/*.bbl
+papers/paperB/*.aux
+papers/paperB/*.blg
 
