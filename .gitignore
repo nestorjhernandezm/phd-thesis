@@ -17,4 +17,7 @@ papers/paperA/*.blg
 papers/paperB/*.bbl
 papers/paperB/*.aux
 papers/paperB/*.blg
+papers/paperC/*.bbl
+papers/paperC/*.aux
+papers/paperC/*.blg
 
