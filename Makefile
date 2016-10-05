@@ -15,6 +15,7 @@ pdflatex: master.tex
 	bibtex papers/paperA/paperA
 	bibtex papers/paperB/paperB
 	bibtex papers/paperC/paperC
+	bibtex papers/paperD/paperD
 	pdflatex --synctex=1 master.tex
 	pdflatex --synctex=1 master.tex
 	rm -f $(OTHER) $(PS)

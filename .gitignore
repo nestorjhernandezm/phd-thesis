@@ -20,4 +20,6 @@ papers/paperB/*.blg
 papers/paperC/*.bbl
 papers/paperC/*.aux
 papers/paperC/*.blg
-
+papers/paperD/*.bbl
+papers/paperD/*.aux
+papers/paperD/*.blg
