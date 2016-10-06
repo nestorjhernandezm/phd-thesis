@@ -4,7 +4,6 @@ introduction/introduction.blg
 *.aux
 *.log
 *.out
-*.pdf
 *.bbl
 *.blg
 *.synctex.gz
