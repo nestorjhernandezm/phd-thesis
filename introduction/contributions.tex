@@ -1,0 +1,74 @@
+\section{Contribution In This Thesis}\label{sec:contributions}
+
+\subsection{Paper A}
+\textbf{On the Throughput and Energy Benefits of Network Coded Cooperation}
+\textit{N\'estor J. Hern\'andez Marcano, Janus Heide, Daniel E. Lucani, Frank H.P. Fitzek}
+\\  IEEE Cloud Networking Conference (Cloudnet), 2014 IEEE, p. 138--172.
+\\ Pages 5.
+
+\subsection*{Motivation}
+The benefits of network coding have been broadly studied in the field of wireless mesh networks. The \textit{mac} layer of wireless network does not provide any reliability mechanisms for overheard packets. In this paper we address this problem and we provide different mechanisms to improve the reliability of the \textit{mac} protocol. The analytical result is provided to demonstrate the performance of the proposed solution. These expressions are confirmed by numerical result. Despite the fact that the proposed protocols introduce signaling overhead, the results show that the performance is increased significantly.
+
+\subsection*{Paper Content}
+Our work is based on how the reliability is implemented into the \textit{mac} layer to support network coding. We proposed RUNC and RBNC. In the RUNC approach when the relay receives two packets from Alice and Bob, it combines them and chooses Alice or Bob as the destination (for example the relay chooses Alice as the destination), then the relay unicasts the coded packet. The destination sends an acknowledgment similarly as with the unicast method. The difference between RUNC and CATWOMAN is that the overhearing node (Bob) sends a specific acknowledgment to the relay. This acknowledgment is piggybacked with other data packets and increases the reliability. This acknowledgment is included in the data packet, therefore, it does not impose very much overhead to the network. RBNC is similar to RUNC but the relay broadcasts each packet.
+
+\subsection*{Main Results}
+In this paper, we showed that the network coding is helpful even if it support the reliability in the \textit{mac} layer for overheard packets. However the reliability introduces some overhead in the \textit{mac} layer while it decreases the packet loss. This approach will increase the system throughput and avoid the congestion by decreasing the number of transmitted packets. \textit{runc} has better performance than \textit{rbnc} because it uses the IEEE \textit{mac} reliability mechanism for one of the receiver.
+
+
+\clearpage
+
+\subsection{Paper B}
+\textbf{The title}
+\textit{Peyman Pahlevani, Daniel E. Lucani, Morten V. Pedersen, Frank H.P. Fitzek}
+\\  Globecom 2013 Workshop - First International Workshop on Cloud-Processing in Heterogeneous Mobile Communication Networks - GLOBECOM 2013
+\\ Pages 6.
+
+
+\subsection*{Motivation}
+This paper presents PlayNCool, an opportunistic protocol with local optimization based on network coding to improve the throughput of a wireless mesh network. PlayNCool goal is to improve the existing routing protocols by (1) using \textit{rlnc} to transmit the coded packets, (2) recoding at relay nodes, and especially (3) exploiting a local helper to improve the link quality. In this paper we considered the problem of how much a helper should wait before starting the transmission of the coded packets.  We show that PlayNCool can provide gains of more than 3x in individual links, which translates into a large end-to-end throughput improvement, and that it provides higher gains when more nodes in the network contend for the channel at the \textit{mac} layer, making it particularly relevant for dense mesh networks.
+\subsection*{Paper Content}
+We exploit the idea of selecting a local helper can improve the quality of transmission in each link and thus enhance the end--to—end service. Each link can select a subset of helper nodes to increase reliability of a link. In our approach, a relay node chooses the next hop using information derived from routing protocol (like AODV, DSDV, or B.A.T.M.A.N. and sends a coded packet to the next hop. However, the key to guaranteeing good performance is for the selected helper to \textit{play it cool} and not transmit immediately, but wait to gather some coded packets before it starts to transmit. By accumulating the coded packet in the helper, the helper will transmit more innovative coded packets to the destination.
+\subsection*{Main Results}
+In this paper, we introduced a local optimization protocol using network coding being compatible to the current routing protocols for \textit{wmn}s. This protocol provides additional gains in terms of throughput and delay performance. Our protocol, called PlayNCool, provides a simple heuristic to estimate how much the helper should wait until it transmits the coded packets. Each helper calculates the waiting time from link quality information. In particular, we have understood that the link quality from sender to receiver and helper to receive are factor to provide gain to the system.
+\clearpage
+
+
+\subsection{Paper C}
+\textbf{Network Coding to Enhance Standard Routing Protocols in Wireless Mesh Networks}
+\textit{Peyman Pahlevani, Daniel E. Lucani, Morten V. Pedersen, Frank H.P. Fitzek}
+\\ 2013 IEEE Globecom Workshops (GC Wkshps). IEEE Press, 2013. p. 610-616.
+\\ Pages 6.
+\subsection*{Motivation}
+This paper presents a protocol design and simulation of a locally optimized network coding protocol, called PlayNCool, for wireless mesh networks. This paper focuses on the protocol design details needed to make the PlayNCool protocol operate in the reality without changing the current network stack. We evaluated the performance of PlayNCool using ns--3 in multi-hop topologies. Our results show that the PlayNCool protocol increases the end-to-end throughput by more than two--fold and up to four--fold in our settings.
+ \subsection*{Paper Content}
+In this paper we focused on the implementation details of the PlayNCool protocol. The playNCool protocol is a thin layer between MAC and IP layers. In the PlayNCool protocol, the helper accumulates the coded packets by overhearing transmissions from the source. When it accumulates a number of coded packets (less than generation size in general), it generates coded packets by recoding, i.e., by creating linear combinations of the buffered coded packets, and transmits them to the intended relay. At this point, both the source and the helper continue to transmit coded packets to the relay until the relay signals that it has all the generation size. Then, the source stops transmitting the current generation and starts transmitting the new generation. Each helper controls the number of the coded packets that should be generated by a metric called $Budget$.
+\subsection*{Main Results}
+In this paper we introduced a market based network coding protocol for meshed networks called PlayNCool. This protocol exploits local helpers to increase the performance and throughput from the source to the destination and it is compatible with existing routing protocol. In ns--3 implementation, we showed that PlayNCool increases the end-to-end gain by factor of two to four folds in the wireless mesh network.
+\subsection*{Own Related Publications}
+This paper provides the implementation details of the protocol introduced in [\ref{paper:paperB}]
+\clearpage
+
+
+\subsection{Paper D}
+\textbf{On the Coded Packet Relay Network in the Presence of Neighbors: Benefits of Speaking in a Crowded Room}
+\textit{Hana Khamfroush, Peyman Pahlevani, Daniel E. Lucani, Martin Hundeb{\o}ll, Frank H. P. Fitzek}
+\\  IEEE International Conference on Communications, 2014 IEEE, p. 1928 - 1933.
+\\ Pages 6.
+\subsection*{Motivation}
+In this paper we study the problem of optimal use of a relay node to reduce the transmission time using network coding. More importantly, we address  focused on the effect the active transmitting neighborhood in overall gain. We show that in systems with a fair \textit{mac} mechanism, the use of a relay, in appearance of active neighbour nodes, enhances the gain up to $3.5$x in terms of throughput compared to using only the direct link. The problem is modelled as a \textit{mdp} and the results are provided comparing simple, close--to--optimal heuristics to the optimal scheme.
+
+ \subsection*{Paper Content}
+Our problem focuses on determining the optimal transmission policy to send $M$ data packets from $S$ to $D$ with the help of $R$ and in the presence of $X-1$ active neighbors sharing the same channel. we make the following contributions:
+\begin{itemize}
+\item \textbf{Mathematical Analysis:} we model the problem as a \textit{mdp}.
+\item\textbf{Numerical Results and Comparison to Heuristics:}
+we calculate the expected completion time for different scenarios, e.g,
+different number of neighbors, different number of packets,
+different erasure probabilities of the links between source,relay, and destination. These results shows two key and counter--intuitive results.
+Finally, a comparison between the optimal results obtained by \textit{mdp} and the simulation results of PlayNCool[\ref{paper:paperB},\ref{paper:paperC}] is provided showing that PlayNCool provides a close--to—optimal solution for many scenarios.
+\end{itemize}\subsection*{Main Results}
+We proposed a Markov Decision Process model to illustrate the optimal approach to minimize the transmission time a generation of packets from a source to a destination in the presence of active neighbors by using \textit{rlnc} and a relay approach. Our results show that PlayNCool is able to achieve the close--to--optimal performance, when the number of packets is large. More importantly, we showed that using a relay in the presence of active neighbors is beneficial even if the channel from relay to destination is not better than the channel between source and destination.
+\subsection*{Own Related Publications}
+The MDP analysis for the proposed protocol in ~[\ref{paper:paperB},\ref{paper:paperC}].
+\clearpage

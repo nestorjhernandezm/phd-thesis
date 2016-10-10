@@ -11,7 +11,7 @@ OTHER = *~ *.aux *.dvi *.toc *.bbl *.blg *.out *.thm *.ps *.idx *.ilg *.ind *.td
 
 pdflatex: master.tex
 	pdflatex --synctex=1 master.tex
-	bibtex introduction/introduction
+#	bibtex introduction/introduction
 #	bibtex papers/paperA/paperA
 #	bibtex papers/paperB/paperB
 #	bibtex papers/paperC/paperC
