@@ -1,6 +1,7 @@
 introduction/introduction.aux
 introduction/introduction.bbl
 introduction/introduction.blg
+*.pdf
 *.aux
 *.log
 *.out
