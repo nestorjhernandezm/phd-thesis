@@ -30,7 +30,7 @@ Although these coding techniques are useful for multicast networks, they pose tw
 \subsection{Network Coding}
 \label{sec:nc_rlnc}
 % Network Coding, inter-session (XOR) and intra-session (RLNC)
-Introduced by Alshwede et al. \cite{ahlswede2000network}, \ac{NC} appeared as an effective technology to remove the limitations presented previously. In this work, the authors presented a new paradigm shift for conveying information in communication networks. Instead of treating the packets as atomic unmodifiable units at the intermediate node in an example network known as the \textit{butterfly network}, they are regarded as algebraic elements in \ac{GF} that can be operated on to create new coded packets. In \cite{ahlswede2000}, the authors considered the binary field to perform the algebraic operations. This type of coding bevcame known later as inter-session network coding since packets from two sessions where mixed in the coding process. Due to the binary field nature, it also became known as XOR coding since this operation is congruent with the modulo-2 addition.
+Introduced by Alshwede et al. \cite{ahlswede2000network}, \ac{NC} appeared as an effective technology to remove the limitations presented previously. In this work, the authors presented a new paradigm shift for conveying information in communication networks. Instead of treating the packets as atomic unmodifiable units at the intermediate node in an example network known as the \textit{butterfly network}, they are regarded as algebraic elements in a \ac{GF} that can be operated on to create new coded packets. In \cite{ahlswede2000network}, the authors considered the binary field to perform the algebraic operations. This type of coding bevcame known later as inter-session network coding since packets from two sessions where mixed in the coding process. Due to the binary field nature, it also became known as XOR coding since this operation is congruent with the modulo-2 addition.
 
 Besides inter-session network coding, intra-session network coding also known as \ac{RLNC} \cite{ho2006random} was introduced by Ho et al. Here, coded packets are algebraic linear combinations of original set of packets from a single data flow. This permits to remove the limitation of sending \textit{particular} packets by now sending coded packets as linear equations of the originals. This new type of coding across the network is proven to achieve the multicast capacity from a flow perspective with very high probability \cite{koetter2003algebraic,ho2006random}. Later, this key idea let the research community know for the first time that it was possible to code on a \textit{network} basis and not only on a link basis as conventional \ac{FEC} technologies do. In this way, instead of typically encoding and decoding on a hop basis, relaying nodes can recode packets to reduce delay and still take advantage of the data representation for the next hop. In this sense, \ac{RLNC} appears as the only coding technique that overcomes the restrictions mentioned in Section~\ref{sec:d2d_erasure_codes}.
 
@@ -47,7 +47,7 @@ Based in the previous background, this thesis considers to push the state of the
 
 \item Study the dominating regimes and ideal cloud sizes to observe if there exists ideal values for high system throughput and low energy consumption.
 
-\item Study the effect of transmission policies under a \ac{WLAN} scenario. In this case, medium access mechanisms to avoid interference should be evaluated.
+\item Study the effect of transmission policies under a \ac{WLAN} scenario. In this case, medium access mechanisms to avoid interference should be considered.
 \end{enumerate}
 
 \begin{figure}[ht!]
@@ -57,6 +57,6 @@ Based in the previous background, this thesis considers to push the state of the
 \label{fig:proposal}
 \end{figure}
 
-From Fig.~\ref{fig:proposal}, the study for objective 1 was addressed in paper {[\ref{paper:paperA}]}. Objectives 2 and 3 were reviewed in paper {[\ref{paper:paperB}]}. Finally, objective 4 was addressed in paper {[\ref{paper:paperD}]} with a software tool implemented in paper {[\ref{paper:paperC}]} that uses Kodo and the open-source ns-3 simulator.
+From Fig.~\ref{fig:proposal}, the study for objective 1 was addressed in paper {[\ref{paper:paperA}]}. Objectives 2 and 3 were reviewed in paper {[\ref{paper:paperB}]}. Finally, objective 4 was addressed in paper {[\ref{paper:paperD}]} with a software tool implemented in paper {[\ref{paper:paperC}]} that uses Kodo and the open-source ns-3 simulator \cite{ns3link}.
 
 %In principle, adding more users to the cloud enhances the realibility of it and minimizes the transmissions from the \ac{BS}. Still, this might increment the transmissions inside the clouds since . 
