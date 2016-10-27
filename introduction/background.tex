@@ -56,6 +56,8 @@ As seen in Fig.~\ref{fig:rlnc_enc}, in \ac{RLNC} the information to be transmitt
 
 After creating a coded packet, it is necessary to signal the coding coefficients utilized for encoding to the decoder. The signalling method that guarantees potential recoding without major caveats, is to append each coding coefficient used to create that coded packet as overhead. For each coded packet there is an overhead of $|v_{ij}| = \sum_{j = 1}^g \log_{2}(q) = g \times \log_{2}(q)$ bits. To get the original packets, a decoder only needs to collect \textit{any} set of $g$ linearly independent coded packets to create a $g \times g$ matrix with the coding coefficients and perform Gaussian elimination \cite{fragouli2006network} to solve the linear equations made in the encoding process.
 
+\todo{RLNC Applications?}
+
 \subsection{RLNC for Multicast D2D Cooperative Networks}
 Different from other erasure correcting codes, \ac{RLNC} due to its recoding capability is well-suited for multicast \ac{D2D} cooperative networks. However, according to its parameters in Table~\ref{tab:rlnc_parameters}.
 %\cite{heide2012green,fitzek2013implementation}
@@ -79,6 +81,8 @@ Different from other erasure correcting codes, \ac{RLNC} due to its recoding cap
 \vspace{0.2cm}
 \label{tab:rlnc_parameters}
 \end{table}
+
+\todo{Make table description? Make better table intro? Use better variable names? Talk about cluster sizes?}
 
 \subsection{Thesis Objectives}
 Based in the previous background, this thesis considers to push the state of the art by using multicast \ac{D2D} mobile clouds in cooperative wireless networks with \ac{RLNC} since current techniques focuses mostly in \ac{D2D} communications based in unicast pairs with either \ac{RLNC} or non-composable rateless codes. The objectives of this thesis are to:
