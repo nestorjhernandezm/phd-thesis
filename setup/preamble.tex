@@ -198,3 +198,8 @@
 % acronym: For including the acronyms used in the thesis manuscript
 %\usepackage[nolist]{acronym} -> To not include the file list.
 \usepackage{acronym} % Include the list of acronyms in the output file
+
+% array: for table values centering
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
