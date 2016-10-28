@@ -54,26 +54,27 @@ Besides inter-session network coding, intra-session network coding known as \ac{
 
 As seen in Fig.~\ref{fig:rlnc_enc}, in \ac{RLNC} the information to be transmitted is split into packets which are grouped into sets called \textit{generations} \cite{chou2003practical}. Each generation $k = 1, \ldots, M$ consists of $g$ original packets $P_i,\ i = 1, \ldots, g$ used to create new coded packets as with any \ac{FEC} technique from Section~\ref{sec:erasure_codes}. For each generation, each coded packet generated is a linear combination of all the original packets $C_i = \sum_{j = 1}^g v_{ij} P_i,\ i \geq 1$. Here, $v_{ij}$ is the coding coefficient that multiplies packet $j$ in the process of creating packet $i$. The coefficients are picked uniformly at random from $GF(q)$ where $q$ is the field size. All the operations are properly defined under the arithmetics of $GF(q)$.
 
-After creating a coded packet, it is necessary to signal the coding coefficients utilized for encoding to the decoder. The signalling method that guarantees potential recoding without major caveats, is to append each coding coefficient used to create that coded packet as overhead. For each coded packet there is an overhead of $|v_{ij}| = \sum_{j = 1}^g \log_{2}(q) = g \times \log_{2}(q)$ bits. To get the original packets, a decoder only needs to collect \textit{any} set of $g$ linearly independent coded packets to create a $g \times g$ matrix with the coding coefficients and perform Gaussian elimination \cite{fragouli2006network} to solve the linear equations made in the encoding process.
+After creating a coded packet, it is necessary to signal the coding coefficients utilized for encoding to the decoder. The signalling method that guarantees potential recoding without major caveats, is to append each coding coefficient used to create that coded packet as overhead. For each coded packet there is an overhead of $|v_{ij}| = \sum_{j = 1}^g \log_{2}(q) = g \times \log_{2}(q),\ \forall i,j$ bits. To get the original packets, a decoder only needs to collect \textit{any} set of $g$ linearly independent coded packets to create a $g \times g$ matrix with the coding coefficients and perform Gaussian elimination \cite{fragouli2006network} to solve the linear equations made in the encoding process.
 
 \todo{RLNC Applications?}
 
 \subsection{RLNC for Multicast D2D Cooperative Networks}
-Different from other erasure correcting codes, \ac{RLNC} due to its recoding capability is well-suited for multicast \ac{D2D} cooperative networks. However, according to its parameters in Table~\ref{tab:rlnc_parameters}.
+
+Different from other erasure correcting codes, \ac{RLNC} is well-suited for multicast \ac{D2D} cooperative networks due to its recoding capability. However, according to its parameters in Table~\ref{tab:rlnc_parameters}. Code parameters reference \cite{heide2011code}  
 %\cite{heide2012green,fitzek2013implementation}
 
 \begin{table}[h]
   \centering
   \caption{RLNC parameters effects.}
-  \begin{tabular}{|M{0.75cm}|M{2.15cm}|M{2cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}}
+  \begin{tabular}{|M{0.75cm}|M{2cm}|M{1.5cm}|M{2.65cm}|M{2cm}|}
 
     \hline
-    $q$ & Transmissions & Redundancy & Signalling & Overhead  \\
+    $q$         & Linear Dependency & Signalling & Overhead Major Contributor & Field Complexity  \\
     \hline
     \hline
-    $< 2^8$     & High & High & Low  & Redundancy dominated \\
+    $< 2^8$     & High       & Low        & Linear Dependency & Low \\
     \hline
-    $\geq 2^8$  & Low  & Low  & High & Signalling dominated \\
+    $\geq 2^8$  & Low        & High       & Signalling & High \\
     \hline
 
   \end{tabular}
