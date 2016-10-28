@@ -56,17 +56,15 @@ As seen in Fig.~\ref{fig:rlnc_enc}, in \ac{RLNC} the information to be transmitt
 
 After creating a coded packet, it is necessary to signal the coding coefficients utilized for encoding to the decoder. The signalling method that guarantees potential recoding without major caveats, is to append each coding coefficient used to create that coded packet as overhead. For each coded packet there is an overhead of $|v_{ij}| = \sum_{j = 1}^g \log_{2}(q) = g \times \log_{2}(q),\ \forall i,j$ bits. To get the original packets, a decoder only needs to collect \textit{any} set of $g$ linearly independent coded packets to create a $g \times g$ matrix with the coding coefficients and perform Gaussian elimination \cite{fragouli2006network} to solve the linear equations made in the encoding process.
 
-Despite being a relatively recent technology, practical applications of \ac{RLNC} started to appear a few years after its inception. The work of Chachulski et al. in \cite{chachulski2007more} considered \ac{MORE}, the first protocol using \ac{RLNC} which showed different achievable gains in real wireless mesh networks. Different potential \ac{RLNC} use cases can also be found in \cite{fragouli2006network}. For reliable multicast, various works have been made to quantify the gains of \ac{RLNC} against other transmission schemes in terms of erasure codes or policies. Among these, it can be mentioned: (i) throughput and delay gains of reliable multicast with \ac{RLNC} \cite{eryilmaz2008delay} and (ii) resource allocation of multicast \ac{RLNC} based networks \cite{chiti2013optimized,tassi2015resource} among others. Nevertheless, neither of these works consider cooperation or multicast \ac{D2D} communications. 
+Despite being a relatively recent technology, practical applications of \ac{RLNC} started to appear a few years after its inception. The work of Chachulski et al. in \cite{chachulski2007more} considered \ac{MORE}, the first protocol using \ac{RLNC} which showed different achievable gains in real wireless mesh networks. Different potential \ac{RLNC} use cases can also be found in \cite{fragouli2006network}. For reliable multicast, various works have been made to quantify the gains of \ac{RLNC} against other transmission schemes in terms of erasure codes or policies. Among these, it can be mentioned: (i) throughput and delay gains of reliable multicast with \ac{RLNC} \cite{eryilmaz2008delay} and (ii) resource allocation of multicast \ac{RLNC} based networks \cite{chiti2013optimized,tassi2015resource} among others. Nevertheless, neither of these works consider cooperation or multicast \ac{D2D} communications.
 
-\subsection{RLNC for Multicast D2D Cooperative Networks}
+\subsection{RLNC Parameters}
 
-Different from other erasure correcting codes, \ac{RLNC} is well-suited for multicast \ac{D2D} cooperative networks due to its recoding capability.
-
-There has been different studies that addressed the impact of \ac{RLNC} code parameters, i.e. the generation size $g$ and the field size $q$, in both theoretical and practical applications with mobile devices\cite{heide2009network,lucani2009random,heide2011code,paramanathan2013lean}. According to them, there has major finding about the impact of the code parameters in its performance. For the field size, its effects are resumed in Table~\ref{tab:rlnc_parameters} for the case of a single encoder and decoder excluding packet erasures.
+There has been different studies that addressed the impact of \ac{RLNC} parameters, i.e. the generation size $g$ and the field size $q$, in both theoretical and practical applications with mobile devices\cite{heide2009network,lucani2009random,heide2011code,paramanathan2013lean}. According to them, there has major finding about the impact of the code parameters in its performance. For the field size, its effects are resumed in Table~\ref{tab:rlnc_parameters} for the case of a single encoder and decoder excluding packet erasures.
 
 \begin{table}[h]
   \centering
-  \caption{Field size effects in the code performance for one source-destionation with no erasures.}
+  \caption{Field size effects in its performance.}
   \begin{tabular}{|M{0.75cm}|M{2cm}|M{1.5cm}|M{2.65cm}|M{2cm}|}
 
     \hline
@@ -92,11 +90,17 @@ Signalling is interpreted as the amount of bits required to represent the coding
 
 Thus, overhead accounts for both effects of the linear dependency and coding coefficients signalling respect to useful data. In Table~\ref{tab:rlnc_parameters}, it has been specified which is the effect that accounts for most of the total overhead in the specified region. For low fields, most of the overhead comes from linear dependency effect , but for higher field sizes the signalling from the coding coefficients becomes critical. 
 
-%\cite{heide2012green,fitzek2013implementation,militano2014wi}
+Finally, field complexity accounts for the computational cost and time required for the operations in \ac{GF} arithmetics required to process the data. Besides algorithmic complexities, the field utilized to operate on the data affects the code performance in terms of time and energy spent on processing. The binary field poses a low computational burden on the device carrying the operations since modulo-2 operations are XOR/AND operations. However, increasing the field size higher than $2^8$ requires to define new arithmetics which higher processing time. Thus, proper field size for mobile applications are particularly important to ensure a satisfactoring code processing throughtput \cite{heide2009network,paramanathan2013lean}.
 
-\todo{Make better table intro? Talk about cluster sizes?}
+In terms of mobile applications, all of these aspects relate to the application throughput and energy consumption. Ideally, parameter configurations that permit to achieve: (i) low number of transmissions required to decode, low total overhead a low field complexity are desirable. However, as seen from the previous description, these objectives are conflictive posing a tradeoff for using only \ac{RLNC} in our scenario.
 
 \subsection{Thesis Objectives}
+Different from other erasure correcting codes, \ac{RLNC} is well-suited for multicast \ac{D2D} cooperative networks due to its recoding capability.
+
+%\cite{heide2012green,fitzek2013implementation,militano2014wi}
+\todo{Talk about cluster sizes?}
+
+
 Based in the previous background, this thesis considers to push the state of the art by using multicast \ac{D2D} mobile clouds in cooperative wireless networks with \ac{RLNC} since current techniques focuses mostly in \ac{D2D} communications based in unicast pairs with either \ac{RLNC} or non-composable rateless codes. The objectives of this thesis are to:
 
 \begin{enumerate}
