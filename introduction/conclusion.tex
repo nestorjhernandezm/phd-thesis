@@ -1,6 +1,22 @@
 \section{Conclusion}\label{sec:conclusion}
 
-This thesis addresses critical challenges in state of the art multicast \ac{D2D} cellular networks with network coded cooperation through \ac{RLNC} 
+This thesis addresses critical challenges from the state of the art in multicast \ac{D2D} cellular networks with network coded cooperation through \ac{RLNC}. Particularly, two major research lines were addressed in this area: (i) Ideal network codes for high throughput and the end-user mobile devices, low energy consumption at the cellular \ac{BS} and the mobile networks and minimum overhead and (ii) Rapid evaluation of transmission policies of . Regarding these aspects, this thesis has arrived to the following conclusions:
+
+\begin{enumerate}
+
+\item The regions where multicasting to a cooperative \ac{D2D} mobile cloud vs. broadcasting with \ac{RLNC} provide throughput and energy gains were defined in terms of the energy, data rate costs but also the code parameters. In this case, it was observed that at least 2X gains are easy achievable by having a data rate and energy costs in the short-range communications that doubles the cellular ones. To achieve the highest throughput and least energy consumption at the \ac{BS}, it is required for all the devices inside the clouds to have their connectivity with the cellular network activated. To get the least energy consumption at the devices on average, it is required that only one device in each cloud is connected to the \ac{BS} and the others of the same cloud not. However, this has the impact of reducing the throughput from the \ac{BS}. Controlling the number of connected devices to the \ac{BS} poses a trade-off between throughput and energy.
+
+\item Codes constructions and its optimal parameters that achieve the minimal total overhead from transmissions of linear dependent packets and coding coefficients were found for both pure broadcast and cooperative \ac{D2D} scenarios. Here, total percentual overhead values of less than 3\% in all the considered scenarios were obtained, which are fairly smaller than state of the art \ac{RLNC} codes.
+
+\item In terms of operational regimes of multicast \ac{D2D} clouds with \ac{RLNC}, the operational regimes for heterogeneous cloud sizes were determined. In the stage where packets are broadcasted from the cellular \ac{BS}, it was observed that the cloud with the highest equivalent packet erasure probability is the one that dominates the total completion time in this case. In the stage where packets are disseminated inside the mobile clouds, the cloud with the larger combination of both missing packets, packet erasure probability and number of devices is the one that dominates the total completion time in this case. Also, it was observed that the homogeneous cloud size provides the optimal operational point since, in each transmission stage, all the clouds take the same time to distribute the content. 
+
+\item A reusable and fully maintained software framework using the Kodo library and the ns-3 simulator was proposed to the research community to quickly deploy network coding simulations of standard topologies to evaluate simple heuristics in a rapid fashion, thus helping current and future protocol developers in their design process.
+
+\item A set of two transmission policies and a \ac{MAC} mechanism to avoid interference was made using the Kodo + ns-3 software tool. Here, it was observed that by using ideal access probabilities at the devices and the recoding feature from \ac{RLNC} it is possible to attain 1.5-1.75X gains in the total completion time at the end-device.
+
+\end{enumerate}
+
+Future work in the areas investigated in the thesis should consider: (i) Implementation of the proposed solutions in real devices, (ii) evaluation of resource allocation in \ac{LTE-A} or even 5G networks, (iii) modeling of non-orthogonal resources of the \ac{D2D} links, e.g. where there is unavoidable interference at the end-devices.
 
 % In case you have questions, comments, suggestions or have found a bug, please do not hesitate to contact me. You can find my contact details below.
 %   \begin{center}
